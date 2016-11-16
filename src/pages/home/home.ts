@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators} from '@angular/forms';
+import { FormGroup} from '@angular/forms';
 
 import { NavController } from 'ionic-angular';
 
 import { DynamicField } from '../../models/dynamic-field';
+import { DynamicForm } from '../../providers/dynamic-form';
 
 @Component({
   selector: 'page-home',
@@ -16,17 +17,13 @@ export class HomePage implements OnInit {
     ];
   form: FormGroup;
 
-  constructor(public navCtrl: NavController) { }
+  constructor(
+    public navCtrl: NavController,
+    public df: DynamicForm
+    ) { }
 
   ngOnInit() {
-    let group: any = {};
-
-    this.fields.forEach(field => {
-      group[field.name] = field.required ? new FormControl(field.value || '', Validators.required)
-                                              : new FormControl(field.value || '');
-    });
-
-    this.form = new FormGroup(group);
+    this.form = this.df.toFormGroup(this.fields);
   }
 
 }

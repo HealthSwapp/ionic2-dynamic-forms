@@ -1,10 +1,19 @@
 import { NgModule } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
 
+////// COMPONENTS ////// 
 import { DynamicFieldComponent } from '../components/dynamic-field/dynamic-field';
 import { DynamicFormComponent } from '../components/dynamic-form/dynamic-form';
+////// COMPONENTS //////
+
+////// PAGES //////
+import { HomePage } from '../pages/home/home';
+////// PAGES //////
+
+////// PROVIDERS //////
+import { DynamicForm } from '../providers/dynamic-form';
+////// PROVIDERS //////
 
 @NgModule({
   declarations: [
@@ -23,6 +32,6 @@ import { DynamicFormComponent } from '../components/dynamic-form/dynamic-form';
     DynamicFieldComponent,
     DynamicFormComponent
   ],
-  providers: []
+  providers: [DynamicForm]
 })
 export class AppModule {}
