@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { FormGroup} from '@angular/forms';
 
 import { DynamicField } from '../../models/dynamic-field';
 
@@ -7,8 +8,13 @@ import { DynamicField } from '../../models/dynamic-field';
   templateUrl: 'dynamic-form.html'
 })
 export class DynamicFormComponent {
-  @Input() fields: DynamicField<any>[] = [];
+  @Input() fields: DynamicField[] = [];
+  @Input() form: FormGroup;
 
   constructor() {  }
+
+  submitForm = () => {
+    console.log(this.form.value)
+  }
 
 }

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { FormGroup} from '@angular/forms';
 
 import { DynamicField } from '../../models/dynamic-field';
 
@@ -7,7 +8,10 @@ import { DynamicField } from '../../models/dynamic-field';
   templateUrl: 'dynamic-field.html'
 })
 export class DynamicFieldComponent {
-  @Input() field: DynamicField<any> = new DynamicField({});
+  @Input() field: DynamicField = {};
+  @Input() form: FormGroup;
 
   constructor() { }
+
+  get isValid() { return this.form.controls[this.field.name].valid; }
 }

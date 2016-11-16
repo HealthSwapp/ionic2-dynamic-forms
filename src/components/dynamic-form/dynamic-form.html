@@ -1,1 +1,9 @@
-<dynamic-field *ngFor="let field of fields" [field]="field"></dynamic-field>
+<form [formGroup]="form" (ngSubmit)="submitForm()">
+  <ion-list>
+    <dynamic-field *ngFor="let field of fields" [field]="field" [form]="form"></dynamic-field>
+  </ion-list>
+
+  <div padding>
+    <button ion-button primary block type="submit">Submit Form</button>
+  </div>
+</form>

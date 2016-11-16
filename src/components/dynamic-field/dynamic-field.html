@@ -1,7 +1,8 @@
-<div [ngSwitch]="field.key">
-
-  <h1 *ngSwitchCase="'key1'">{{field.value}}</h1>
-  <h2 *ngSwitchCase="'key2'">{{field.value}}</h2>
-  <h3 *ngSwitchCase="'key3'">{{field.value}}</h3>
-
-</div>
+<ion-item [ngSwitch]="field.type" [formGroup]="form">
+  <ion-label>{{field.label}}</ion-label>
+  <ion-input *ngSwitchCase="'text'" [formControlName]="field.name" type="text"></ion-input>
+  <ion-input *ngSwitchCase="'email'" [formControlName]="field.name" type="email"></ion-input>
+</ion-item>
+<ion-item *ngIf="!isValid">
+  <ion-label>{{field.error}}</ion-label>
+</ion-item>

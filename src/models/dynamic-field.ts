@@ -1,12 +1,10 @@
-export class DynamicField<T>{
-  value: T;
-  key: string;
-  
-  constructor(options: {
-      value?: T,
-      key?: string
-    } = {}) {
-    this.value = options.value;
-    this.key = options.key || '';
-  }
+export class DynamicField{
+  value?: any;
+  name?: string;
+  type?: string;
+  label?: string;
+  required?: boolean;
+  error?: string;
+  options?: {key: string, value: string}[];
+  children?: any[]; 
 }
