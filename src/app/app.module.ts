@@ -3,10 +3,15 @@ import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
+import { DynamicFieldComponent } from '../components/dynamic-field/dynamic-field';
+import { DynamicFormComponent } from '../components/dynamic-form/dynamic-form';
+
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    DynamicFieldComponent,
+    DynamicFormComponent
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -14,7 +19,9 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    DynamicFieldComponent,
+    DynamicFormComponent
   ],
   providers: []
 })
