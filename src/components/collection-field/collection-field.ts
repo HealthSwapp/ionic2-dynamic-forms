@@ -10,7 +10,5 @@ import { DynamicField } from '../../models/dynamic-field';
 export class CollectionFieldComponent {
   @Input() field: DynamicField = {};
   @Input() form: FormGroup;
-  text: string;
-
 }
 
