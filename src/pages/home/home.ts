@@ -15,8 +15,14 @@ export class HomePage implements OnInit {
     {name: 'name', label: 'Name', type: 'text', error: 'Name is required', required: true, value: 'Elie'},
     {name: 'email', label: 'Email', type: 'email', error: 'Email is required', required: true, value: 'elie@something.com'},
     {name: 'address', label: 'Address', type: 'collection', children: [
-      {name: 'city', label: 'City', type: 'text', error: 'City is required', required: true, value: ''},
-      {name: 'province', label: 'Province', type: 'text', required: false, value: ''},
+      [
+        {name: 'city', label: 'City', type: 'text', error: 'City is required', required: true, value: 'Toronto'},
+        {name: 'province', label: 'Province', type: 'text', required: false, value: ''},
+      ]
+      ,[
+        {name: 'city', label: 'City', type: 'text', error: 'City is required', required: true, value: 'Ottawa'},
+        {name: 'province', label: 'Province', type: 'text', required: false, value: ''},
+      ]
     ]}
     ];
   form: FormGroup;

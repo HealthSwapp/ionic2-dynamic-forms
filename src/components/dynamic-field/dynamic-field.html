@@ -1,5 +1,5 @@
-<span [ngSwitch]="field.type">
+<div [ngSwitch]="field.type">
   <input-field *ngSwitchCase="'text'" [field]="field" [form]="form"></input-field>
   <input-field *ngSwitchCase="'email'" [field]="field" [form]="form"></input-field>
   <collection-field *ngSwitchCase="'collection'" [field]="field" [form]="form"></collection-field>
-</span>
+</div>

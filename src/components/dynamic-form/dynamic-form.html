@@ -1,7 +1,5 @@
 <form [formGroup]="form" (ngSubmit)="submitForm()">
-  <ion-list>
-    <dynamic-field *ngFor="let field of fields" [field]="field" [form]="form"></dynamic-field>
-  </ion-list>
+  <dynamic-field *ngFor="let field of fields" [field]="field" [form]="form"></dynamic-field>
 
   <div padding>
     <button ion-button primary block type="submit">Submit Form</button>

@@ -15,7 +15,11 @@ export class DynamicForm {
       if (!field.children || !field.children.length){
         group[field.name] = this.toFormControl(field);
       }else{
-        group[field.name] = new FormArray([this.toFormGroup(field.children)]);
+        group[field.name] = new FormArray(
+          field.children.map(child => {
+            return this.toFormGroup(child) 
+          })
+          );
       }
     });
 
