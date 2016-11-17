@@ -7,7 +7,7 @@
   <ion-card>
     <ion-card-content>
       <div *ngFor="let subForm of form.controls[field.name].controls; let i = index">
-          <dynamic-field *ngFor="let child of field.children[i]" 
+          <dynamic-field *ngFor="let child of field.children[0]" 
                         [field]="child" [form]="subForm">
           </dynamic-field>
       </div>
@@ -15,7 +15,7 @@
   </ion-card>
 
   <div class="text-right">
-    <button ion-button icon-left small clear right>
+    <button type="button" ion-button icon-left small clear right (click)="addToCollection(field.children[0])">
       <ion-icon name="add"></ion-icon>
       Add {{field.label}}
     </button>
