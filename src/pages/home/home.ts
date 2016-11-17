@@ -13,7 +13,11 @@ import { DynamicForm } from '../../providers/dynamic-form';
 export class HomePage implements OnInit {
   fields: DynamicField[] = [
     {name: 'name', label: 'Name', type: 'text', error: 'Name is required', required: true, value: 'Elie'},
-    {name: 'email', label: 'Email', type: 'email', error: 'Email is required', required: true, value: 'elie@something.com'}
+    {name: 'email', label: 'Email', type: 'email', error: 'Email is required', required: true, value: 'elie@something.com'},
+    {name: 'address', label: 'Address', type: 'collection', children: [
+      {name: 'name', label: 'Name', type: 'text', error: 'Name is required', required: true, value: 'Elie'},
+      {name: 'name1', label: 'Name', type: 'text', error: 'Name is required', required: true, value: 'Elie1'},
+    ]}
     ];
   form: FormGroup;
 

@@ -1,0 +1,2 @@
+<ion-list-header>{{field.label}}</ion-list-header>
+<dynamic-field *ngFor="let child of field.children" [field]="child" [form]="form.controls[field.name]"></dynamic-field>

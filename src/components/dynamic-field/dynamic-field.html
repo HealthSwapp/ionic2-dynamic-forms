@@ -1,8 +1,5 @@
-<ion-item [ngSwitch]="field.type" [formGroup]="form">
-  <ion-label>{{field.label}}</ion-label>
-  <ion-input *ngSwitchCase="'text'" [formControlName]="field.name" type="text"></ion-input>
-  <ion-input *ngSwitchCase="'email'" [formControlName]="field.name" type="email"></ion-input>
-</ion-item>
-<ion-item *ngIf="!isValid">
-  <ion-label>{{field.error}}</ion-label>
-</ion-item>
+<span [ngSwitch]="field.type">
+  <input-field *ngSwitchCase="'text'" [field]="field" [form]="form"></input-field>
+  <input-field *ngSwitchCase="'email'" [field]="field" [form]="form"></input-field>
+  <collection-field *ngSwitchCase="'collection'" [field]="field" [form]="form"></collection-field>
+</span>

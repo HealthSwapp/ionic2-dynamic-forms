@@ -12,8 +12,12 @@ export class DynamicForm {
     let group: any = {};
 
     fields.forEach(field => {
-      group[field.name] = field.required ? new FormControl(field.value || '', Validators.required)
+      if (!field.children || !field.children.length){
+        group[field.name] = field.required ? new FormControl(field.value || '', Validators.required)
                                               : new FormControl(field.value || '');
+      }else{
+        group[field.name] = this.toFormGroup(field.children)
+      }
     });
 
     return new FormGroup(group);

@@ -4,12 +4,13 @@ import { FormGroup} from '@angular/forms';
 import { DynamicField } from '../../models/dynamic-field';
 
 @Component({
-  selector: 'dynamic-field',
-  templateUrl: 'dynamic-field.html'
+  selector: 'collection-field',
+  templateUrl: 'collection-field.html'
 })
-export class DynamicFieldComponent {
+export class CollectionFieldComponent {
   @Input() field: DynamicField = {};
   @Input() form: FormGroup;
+  text: string;
 
-  constructor() { }
 }
+

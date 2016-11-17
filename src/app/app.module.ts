@@ -3,8 +3,10 @@ import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 ////// COMPONENTS ////// 
+import { CollectionFieldComponent } from '../components/collection-field/collection-field';
 import { DynamicFieldComponent } from '../components/dynamic-field/dynamic-field';
 import { DynamicFormComponent } from '../components/dynamic-form/dynamic-form';
+import { InputFieldComponent } from '../components/input-field/input-field';
 ////// COMPONENTS //////
 
 ////// PAGES //////
@@ -19,8 +21,10 @@ import { DynamicForm } from '../providers/dynamic-form';
   declarations: [
     MyApp,
     HomePage,
+    CollectionFieldComponent,
     DynamicFieldComponent,
-    DynamicFormComponent
+    DynamicFormComponent,
+    InputFieldComponent
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -29,8 +33,10 @@ import { DynamicForm } from '../providers/dynamic-form';
   entryComponents: [
     MyApp,
     HomePage,
+    CollectionFieldComponent,
     DynamicFieldComponent,
-    DynamicFormComponent
+    DynamicFormComponent,
+    InputFieldComponent    
   ],
   providers: [DynamicForm]
 })
