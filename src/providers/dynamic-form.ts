@@ -8,27 +8,32 @@ export class DynamicForm {
 
   constructor() {}
 
-  toFormGroup = (fields: DynamicField[]): FormGroup => {
+  toFormGroup = (fields: DynamicField[], model): FormGroup => {
     let group: any = {};
 
     fields.forEach(field => {
       if (!field.children || !field.children.length){
-        group[field.name] = this.toFormControl(field);
+        group[field.name] = this.toFormControl(field, model[field.name]);
       }else{
         group[field.name] = new FormArray(
-          field.children.map(child => {
-            return this.toFormGroup(child) 
+          model[field.name].map(subModel => {
+            return this.toFormGroup(field.children, subModel) 
           })
           );
       }
     });
 
-    return new FormGroup(group);
+    let x = new FormGroup(group);
+
+    console.log('xxxxxxx');
+    console.log(x); 
+
+    return x;
   }
 
-  toFormControl = (field: DynamicField): FormControl => {
-    return field.required ? new FormControl(field.value || '', Validators.required)
-                                              : new FormControl(field.value || '');
+  toFormControl = (field: DynamicField, value): FormControl => {
+    return field.required ? new FormControl(value || '', Validators.required)
+                                              : new FormControl(value || '');
   }
 
 }

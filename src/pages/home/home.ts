@@ -12,19 +12,29 @@ import { DynamicForm } from '../../providers/dynamic-form';
 })
 export class HomePage implements OnInit {
   fields: DynamicField[] = [
-    {name: 'name', label: 'Name', type: 'text', error: 'Name is required', required: true, value: 'Elie'},
-    {name: 'email', label: 'Email', type: 'email', error: 'Email is required', required: true, value: 'elie@something.com'},
+    {name: 'name', label: 'Name', type: 'text', error: 'Name is required', required: true},
+    {name: 'email', label: 'Email', type: 'email', error: 'Email is required', required: true},
     {name: 'address', label: 'Address', type: 'collection', children: [
-      [
-        {name: 'city', label: 'City', type: 'text', error: 'City is required', required: true, value: 'Toronto'},
-        {name: 'province', label: 'Province', type: 'text', required: false, value: ''},
+      {name: 'city', label: 'City', type: 'text', error: 'City is required', required: true},
+      {name: 'province', label: 'Province', type: 'text', required: false}
       ]
-      ,[
-        {name: 'city', label: 'City', type: 'text', error: 'City is required', required: true, value: 'Ottawa'},
-        {name: 'province', label: 'Province', type: 'text', required: false, value: ''},
-      ]
-    ]}
+    }
     ];
+
+  model = {
+    name: 'Elie',
+    email: 'elie@something.com',
+    address: [
+      {
+        city: 'Toronto',
+        province: 'Ontario'
+      },
+      {
+        city: 'Ottawa',
+        province: 'Ontario'
+      }
+    ]
+  };
   form: FormGroup;
 
   constructor(
@@ -33,7 +43,7 @@ export class HomePage implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.form = this.df.toFormGroup(this.fields);
+    this.form = this.df.toFormGroup(this.fields, this.model);
   }
 
 }
