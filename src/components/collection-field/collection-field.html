@@ -1,12 +1,7 @@
-<ion-item>
-  <ion-label>{{field.label}}</ion-label>
-  <ion-checkbox></ion-checkbox>
-</ion-item>
-
 <div>
   <ion-card>
     <ion-card-content>
-      <div *ngFor="let subForm of form.controls[field.name].controls">
+      <div *ngFor="let subForm of form.controls[field.name + '_array'].controls">
           <dynamic-field *ngFor="let child of field.children" 
                         [field]="child" [form]="subForm">
           </dynamic-field>

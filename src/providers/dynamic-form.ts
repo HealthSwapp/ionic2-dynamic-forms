@@ -12,23 +12,21 @@ export class DynamicForm {
     let group: any = {};
 
     fields.forEach(field => {
-      if (!field.children || !field.children.length){
+      if (field.type){
         group[field.name] = this.toFormControl(field, model[field.name]);
-      }else{
-        group[field.name] = new FormArray(
-          model[field.name].map(subModel => {
+      }
+
+      if (field.children && field.children.length){
+        const key = `${field.name}_array`
+        group[key] = new FormArray(
+          model[key].map(subModel => {
             return this.toFormGroup(field.children, subModel) 
           })
           );
       }
     });
-
-    let x = new FormGroup(group);
-
-    console.log('xxxxxxx');
-    console.log(x); 
-
-    return x;
+    
+    return new FormGroup(group);
   }
 
   toFormControl = (field: DynamicField, value): FormControl => {

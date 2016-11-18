@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-////// COMPONENTS ////// 
+////// COMPONENTS //////
+import { CheckboxFieldComponent } from '../components/checkbox-field/checkbox-field'; 
 import { CollectionFieldComponent } from '../components/collection-field/collection-field';
 import { DynamicFieldComponent } from '../components/dynamic-field/dynamic-field';
 import { DynamicFormComponent } from '../components/dynamic-form/dynamic-form';
@@ -21,6 +22,7 @@ import { DynamicForm } from '../providers/dynamic-form';
   declarations: [
     MyApp,
     HomePage,
+    CheckboxFieldComponent,
     CollectionFieldComponent,
     DynamicFieldComponent,
     DynamicFormComponent,
@@ -33,6 +35,7 @@ import { DynamicForm } from '../providers/dynamic-form';
   entryComponents: [
     MyApp,
     HomePage,
+    CheckboxFieldComponent,
     CollectionFieldComponent,
     DynamicFieldComponent,
     DynamicFormComponent,

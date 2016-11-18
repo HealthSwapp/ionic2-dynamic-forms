@@ -14,7 +14,7 @@ export class HomePage implements OnInit {
   fields: DynamicField[] = [
     {name: 'name', label: 'Name', type: 'text', error: 'Name is required', required: true},
     {name: 'email', label: 'Email', type: 'email', error: 'Email is required', required: true},
-    {name: 'address', label: 'Address', type: 'collection', children: [
+    {name: 'address', label: 'Address', type: 'checkbox', children: [
       {name: 'city', label: 'City', type: 'text', error: 'City is required', required: true},
       {name: 'province', label: 'Province', type: 'text', required: false}
       ]
@@ -24,7 +24,8 @@ export class HomePage implements OnInit {
   model = {
     name: 'Elie',
     email: 'elie@something.com',
-    address: [
+    address: true,
+    address_array: [
       {
         city: 'Toronto',
         province: 'Ontario'

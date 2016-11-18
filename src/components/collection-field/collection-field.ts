@@ -17,12 +17,7 @@ export class CollectionFieldComponent {
     ) { }
 
   addToCollection = (fields: DynamicField[]) => {
-    console.log('adding fields');
-
-    let x = this.df.toFormGroup(fields, {});
-    console.log(x);
-
-    (<FormArray>this.form.controls[this.field.name]).push(x)
+    (<FormArray>this.form.controls[`${this.field.name}_array`]).push(this.df.toFormGroup(fields, {}));
   }
 }
 
