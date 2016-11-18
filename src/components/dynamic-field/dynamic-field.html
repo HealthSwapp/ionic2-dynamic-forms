@@ -5,5 +5,9 @@
   <select-field *ngSwitchCase="'select'" [field]="field" [form]="form"></select-field>
   <segmented-field *ngSwitchCase="'segment'" [field]="field" [form]="form"></segmented-field>
 
+  <ion-item *ngIf="field.error && showError">
+    <small color="danger">{{field.error}}</small>
+  </ion-item>
+
   <collection-field *ngIf="field.children && field.children.length > 0" [field]="field" [form]="form"></collection-field>
 </div>

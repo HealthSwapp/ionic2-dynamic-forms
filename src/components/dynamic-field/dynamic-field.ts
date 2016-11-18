@@ -13,5 +13,7 @@ export class DynamicFieldComponent {
 
   constructor() { }
 
-  get isValid() { return this.form.controls[this.field.name].valid; }
+  get showError() { 
+    return !this.form.controls[this.field.name].valid && (this.form.touched || this.form.controls[this.field.name].touched) 
+  }
 }
