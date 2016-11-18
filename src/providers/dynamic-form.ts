@@ -18,14 +18,15 @@ export class DynamicForm {
 
       if (field.children && field.children.length){
         const key = `${field.name}_array`
+        const model_array = model[key] || [];
         group[key] = new FormArray(
-          model[key].map(subModel => {
+          model_array.map(subModel => {
             return this.toFormGroup(field.children, subModel) 
           })
           );
       }
     });
-    
+
     return new FormGroup(group);
   }
 
