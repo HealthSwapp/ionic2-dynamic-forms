@@ -6,4 +6,5 @@ export class DynamicField{
   error?: string;
   options?: {key: string, value: string}[];
   children?: DynamicField[]; 
+  children_conditional?: boolean;
 }

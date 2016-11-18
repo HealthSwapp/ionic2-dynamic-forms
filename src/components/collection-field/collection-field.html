@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="!field.children_conditional || form.controls[field.name].value">
   <ion-card>
     <ion-card-content>
       <div *ngFor="let subForm of form.controls[field.name + '_array'].controls">
