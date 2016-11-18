@@ -8,6 +8,7 @@ import { CollectionFieldComponent } from '../components/collection-field/collect
 import { DynamicFieldComponent } from '../components/dynamic-field/dynamic-field';
 import { DynamicFormComponent } from '../components/dynamic-form/dynamic-form';
 import { InputFieldComponent } from '../components/input-field/input-field';
+import { SelectFieldComponent } from '../components/select-field/select-field';
 ////// COMPONENTS //////
 
 ////// PAGES //////
@@ -26,7 +27,8 @@ import { DynamicForm } from '../providers/dynamic-form';
     CollectionFieldComponent,
     DynamicFieldComponent,
     DynamicFormComponent,
-    InputFieldComponent
+    InputFieldComponent,
+    SelectFieldComponent
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -39,7 +41,8 @@ import { DynamicForm } from '../providers/dynamic-form';
     CollectionFieldComponent,
     DynamicFieldComponent,
     DynamicFormComponent,
-    InputFieldComponent    
+    InputFieldComponent,
+    SelectFieldComponent  
   ],
   providers: [DynamicForm]
 })
