@@ -1,0 +1,12 @@
+<ion-item [formGroup]="form">
+
+  <div padding>
+    {{field.label}}
+    
+    <ion-segment [formControlName]="field.name">
+      <ion-segment-button *ngFor="let option of field.options" [value]="option.value">
+        {{option.key}}
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+</ion-item>

@@ -1,6 +1,6 @@
 <ion-item [formGroup]="form">
   <ion-label>{{field.label}}</ion-label>
     <ion-select [formControlName]="field.name">
-      <ion-option value="{{option.value}}" *ngFor="let option of field.options">{{option.key}}</ion-option>
+      <ion-option [value]="option.value" *ngFor="let option of field.options">{{option.key}}</ion-option>
     </ion-select>
 </ion-item>

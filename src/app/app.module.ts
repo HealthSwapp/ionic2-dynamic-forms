@@ -8,6 +8,7 @@ import { CollectionFieldComponent } from '../components/collection-field/collect
 import { DynamicFieldComponent } from '../components/dynamic-field/dynamic-field';
 import { DynamicFormComponent } from '../components/dynamic-form/dynamic-form';
 import { InputFieldComponent } from '../components/input-field/input-field';
+import { SegmentedFieldComponent } from '../components/segmented-field/segmented-field';
 import { SelectFieldComponent } from '../components/select-field/select-field';
 ////// COMPONENTS //////
 
@@ -28,6 +29,7 @@ import { DynamicForm } from '../providers/dynamic-form';
     DynamicFieldComponent,
     DynamicFormComponent,
     InputFieldComponent,
+    SegmentedFieldComponent,
     SelectFieldComponent
   ],
   imports: [
@@ -42,6 +44,7 @@ import { DynamicForm } from '../providers/dynamic-form';
     DynamicFieldComponent,
     DynamicFormComponent,
     InputFieldComponent,
+    SegmentedFieldComponent,
     SelectFieldComponent  
   ],
   providers: [DynamicForm]

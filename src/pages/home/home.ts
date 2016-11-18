@@ -27,7 +27,12 @@ export class HomePage implements OnInit {
     {name: 'sex', label: 'Sex', type: 'select', error: 'Sex is required', required: true, options: [
       {key: 'Male', value: 'm'},
       {key: 'Female', value: 'f'}
-    ]}
+    ]},
+    {name: 'question_1', label: 'Was this properly cleaned?', type: 'segment', required: false, options: [
+      {key: 'Yes', value: 'y'},
+      {key: 'No', value: 'no'},
+      {key: 'N/A', value: 'n/a'}
+    ]},
     ];
 
   model = {
@@ -45,8 +50,9 @@ export class HomePage implements OnInit {
         province: 'Ontario'
       }
     ],
-    // sex: 'm'
+    sex: 'm'
   };
+  
   form: FormGroup;
 
   constructor(
