@@ -1,23 +1,23 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
 @Injectable()
 export class SchemaModel {
   model = `{
-    name: 'Elie',
-    email: 'elie@something.com',
-    address: true,
-    address_array: [
+    "name": "Elie",
+    "email": "elie@something.com",
+    "address": true,
+    "address_array": [
       {
-        city: 'Toronto',
-        province: 'Ontario',
-        type: 'c'
+        "city": "Toronto",
+        "province": "Ontario",
+        "type": "c"
       },
       {
-        city: 'Ottawa',
-        province: 'Ontario'
+        "city": "Ottawa",
+        "province": "Ontario"
       }
     ],
-    sex: 'm'
+    "sex": "m"
   }`;
 
   constructor() {}

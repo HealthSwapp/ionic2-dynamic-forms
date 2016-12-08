@@ -14,6 +14,7 @@ import { SelectFieldComponent } from '../components/select-field/select-field';
 
 ////// PAGES //////
 import { HomePage } from '../pages/home/home';
+import { FormPage } from '../pages/form/form';
 ////// PAGES //////
 
 ////// PROVIDERS //////
@@ -25,6 +26,7 @@ import { SchemaModel } from '../providers/schema-model';
 @NgModule({
   declarations: [
     MyApp,
+    FormPage,
     HomePage,
     CheckboxFieldComponent,
     CollectionFieldComponent,
@@ -40,6 +42,7 @@ import { SchemaModel } from '../providers/schema-model';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    FormPage,
     HomePage,
     CheckboxFieldComponent,
     CollectionFieldComponent,
