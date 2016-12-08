@@ -21756,3 +21756,8 @@ sub {
 page-home textarea {
   width: 100% !important;
 }
+
+page-home .error {
+  margin-top: 0em;
+  color: red;
+}
