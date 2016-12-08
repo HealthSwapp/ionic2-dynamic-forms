@@ -18,6 +18,8 @@ import { HomePage } from '../pages/home/home';
 
 ////// PROVIDERS //////
 import { DynamicForm } from '../providers/dynamic-form';
+import { SchemaForm } from '../providers/schema-form';
+import { SchemaModel } from '../providers/schema-model';
 ////// PROVIDERS //////
 
 @NgModule({
@@ -47,6 +49,6 @@ import { DynamicForm } from '../providers/dynamic-form';
     SegmentedFieldComponent,
     SelectFieldComponent  
   ],
-  providers: [DynamicForm]
+  providers: [DynamicForm, SchemaForm, SchemaModel]
 })
 export class AppModule {}

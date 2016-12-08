@@ -3,65 +3,26 @@ import { FormGroup} from '@angular/forms';
 
 import { NavController } from 'ionic-angular';
 
-import { DynamicField } from '../../models/dynamic-field';
 import { DynamicForm } from '../../providers/dynamic-form';
+import { SchemaForm } from '../../providers/schema-form';
+import { SchemaModel } from '../../providers/schema-model';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage implements OnInit {
-  fields: DynamicField[] = [
-    {name: 'name', label: 'Name', type: 'text', error: 'Name is required', required: true},
-    {name: 'email', label: 'Email', type: 'email', error: 'Email is required', required: true},
-    {name: 'address', label: 'Address', type: 'checkbox', children_conditional: true, children: [
-      {name: 'city', label: 'City', type: 'text', error: 'City is required', required: true},
-      {name: 'province', label: 'Province', type: 'text', required: false},
-      {name: 'type', label: 'Type', type: 'select', required: false, options: [
-        {key: 'Residence', value: 'r'},
-        {key: 'Office', value: 'o'},
-        {key: 'Cottage', value: 'c'},
-      ]},
-      ]
-    },
-    {name: 'sex', label: 'Sex', type: 'select', error: 'Sex is required', required: true, options: [
-      {key: 'Male', value: 'm'},
-      {key: 'Female', value: 'f'}
-    ]},
-    {name: 'question_1', label: 'Was this properly cleaned?', type: 'segment', required: false, options: [
-      {key: 'Yes', value: 'y'},
-      {key: 'No', value: 'no'},
-      {key: 'N/A', value: 'n/a'}
-    ]},
-    ];
-
-  model = {
-    name: 'Elie',
-    email: 'elie@something.com',
-    address: true,
-    address_array: [
-      {
-        city: 'Toronto',
-        province: 'Ontario',
-        type: 'c'
-      },
-      {
-        city: 'Ottawa',
-        province: 'Ontario'
-      }
-    ],
-    sex: 'm'
-  };
-  
   form: FormGroup;
 
   constructor(
     public navCtrl: NavController,
-    public df: DynamicForm
+    public df: DynamicForm,
+    public sf: SchemaForm,
+    public sm: SchemaModel
     ) { }
 
   ngOnInit() {
-    this.form = this.df.toFormGroup(this.fields, this.model);
+    // this.form = this.df.toFormGroup(this.sf.fields, this.sm.model);
   }
 
 }

@@ -8,8 +8,11 @@
 
 <ion-content padding>
   Testing dynamic forms
-  <p>
-    Change schema in src/pages/home/home.ts
-  </p>
-  <dynamic-form [fields]="fields" [form]="form"></dynamic-form>
+  <p>Schema Form</p>
+  <textarea [(ngModel)]="sf.fields" rows="10"></textarea>
+
+  <p>Schema Form</p>
+  <textarea [(ngModel)]="sm.model" rows="10"></textarea>
+
+  <!--<dynamic-form [fields]="sf.fields" [form]="form"></dynamic-form>-->
 </ion-content>
