@@ -10,11 +10,11 @@
   Testing dynamic forms
   <p>Schema Form</p>
   <textarea [(ngModel)]="sf.fields" rows="10"></textarea>
-  <p>{{schemaError}}</p>
+  <p class='error'>{{schemaError}}</p>
 
   <p>Schema Form</p>
   <textarea [(ngModel)]="sm.model" rows="10"></textarea>
-  <p>{{modelError}}</p>
+  <p class='error'>{{modelError}}</p>
 
   <button ion-button full (click)="showForm()">Show Form</button>
 </ion-content>
